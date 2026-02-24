@@ -55,7 +55,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-heading text-sm uppercase tracking-wider mb-1">Email</h3>
-                    <p className="text-muted-foreground font-body text-sm">info@brandforge.co.za</p>
+                    <p className="text-muted-foreground font-body text-sm">info@brandinghub.co.za</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">

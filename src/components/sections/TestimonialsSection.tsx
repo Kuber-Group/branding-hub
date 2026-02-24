@@ -1,6 +1,8 @@
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+
 const testimonials = [
   {
-    quote: "BrandForge delivered our entire corporate identity in record time. The quality exceeded our expectations.",
+    quote: "Branding Hub delivered our entire corporate identity in record time. The quality exceeded our expectations.",
     name: "Sarah Molefe",
     role: "Marketing Director, Apex Holdings",
   },
@@ -17,16 +19,22 @@ const testimonials = [
 ];
 
 const TestimonialsSection = () => {
+  const { ref, isVisible } = useScrollAnimation();
+
   return (
     <section className="section-dark section-padding">
-      <div className="container-tight">
-        <div className="text-center mb-16">
+      <div className="container-tight" ref={ref}>
+        <div className={`text-center mb-16 scroll-hidden ${isVisible ? "scroll-visible" : ""}`}>
           <p className="font-heading text-primary uppercase tracking-[0.3em] text-sm mb-3">Testimonials</p>
           <h2 className="text-3xl md:text-5xl uppercase">What Our Clients Say</h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {testimonials.map((t) => (
-            <div key={t.name} className="p-8 border border-secondary-foreground/10 hover:border-primary/30 transition-all duration-300">
+          {testimonials.map((t, i) => (
+            <div
+              key={t.name}
+              className={`p-8 border border-secondary-foreground/10 hover:border-primary/30 transition-all duration-300 scroll-hidden ${isVisible ? "scroll-visible" : ""}`}
+              style={{ transitionDelay: isVisible ? `${(i + 1) * 150}ms` : "0ms" }}
+            >
               <div className="text-primary text-4xl font-heading mb-4">"</div>
               <p className="text-secondary-foreground/80 font-body text-sm leading-relaxed mb-6">{t.quote}</p>
               <div>

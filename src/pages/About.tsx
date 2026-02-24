@@ -28,8 +28,8 @@ const About = () => {
                 From Humble Beginnings to Industry Leadership
               </h2>
               <div className="space-y-4 text-muted-foreground font-body text-sm leading-relaxed">
-                <p>
-                  BrandForge was founded with a simple mission: to provide businesses with the highest quality branding and printing solutions at competitive prices.
+                 <p>
+                   Branding Hub was founded with a simple mission: to provide businesses with the highest quality branding and printing solutions at competitive prices.
                 </p>
                 <p>
                   What started as a small printing operation has grown into a full-service branding partner serving corporate clients, SMEs, and government institutions across the continent.
@@ -40,7 +40,7 @@ const About = () => {
               </div>
             </div>
             <div className="aspect-square bg-secondary border border-border flex items-center justify-center">
-              <span className="font-heading text-2xl uppercase tracking-wider text-secondary-foreground/10 select-none">Brand Forge HQ</span>
+              <span className="font-heading text-2xl uppercase tracking-wider text-secondary-foreground/10 select-none">Branding Hub HQ</span>
             </div>
           </div>
         </div>

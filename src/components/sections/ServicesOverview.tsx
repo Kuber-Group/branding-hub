@@ -1,5 +1,6 @@
 import { Palette, Printer, Megaphone } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const services = [
   {
@@ -20,10 +21,12 @@ const services = [
 ];
 
 const ServicesOverview = () => {
+  const { ref, isVisible } = useScrollAnimation();
+
   return (
     <section className="section-light section-padding">
-      <div className="container-tight">
-        <div className="text-center mb-16">
+      <div className="container-tight" ref={ref}>
+        <div className={`text-center mb-16 scroll-hidden ${isVisible ? "scroll-visible" : ""}`}>
           <p className="font-heading text-primary uppercase tracking-[0.3em] text-sm mb-3">What We Do</p>
           <h2 className="text-3xl md:text-5xl uppercase">Core Services</h2>
         </div>
@@ -32,7 +35,8 @@ const ServicesOverview = () => {
             <Link
               to="/services"
               key={svc.title}
-              className={`group p-8 border border-border hover:border-primary/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/5 animate-fade-up-delay-${i + 1}`}
+              className={`group p-8 border border-border hover:border-primary/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/5 scroll-hidden ${isVisible ? "scroll-visible" : ""}`}
+              style={{ transitionDelay: isVisible ? `${(i + 1) * 150}ms` : "0ms" }}
             >
               <svc.icon className="text-primary mb-6" size={32} strokeWidth={1.5} />
               <h3 className="text-xl uppercase mb-3 group-hover:text-primary transition-colors">{svc.title}</h3>
