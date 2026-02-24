@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin } from "lucide-react";
+import logo from "@/assets/bh-logo.png";
 
 const Footer = () => {
   return (
@@ -8,9 +9,12 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Company */}
           <div>
-            <h3 className="text-2xl uppercase tracking-wider mb-4">
-              Brand<span className="text-primary">Forge</span>
-            </h3>
+            <div className="flex items-center gap-2 mb-4">
+              <img src={logo} alt="Branding Hub" className="h-10 w-auto" />
+              <h3 className="text-2xl uppercase tracking-wider">
+                Branding<span className="text-primary">Hub</span>
+              </h3>
+            </div>
             <p className="text-secondary-foreground/70 font-body text-sm leading-relaxed">
               Premium branding, printing, and signage solutions. We deliver professional visual identity with speed, quality, and precision.
             </p>
@@ -58,14 +62,13 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-2 text-secondary-foreground/70">
                 <Mail size={14} className="text-primary" />
-                info@brandforge.co.za
+                info@brandinghub.co.za
               </li>
               <li className="flex items-start gap-2 text-secondary-foreground/70">
                 <MapPin size={14} className="text-primary mt-0.5" />
                 Johannesburg, South Africa
               </li>
             </ul>
-            {/* WhatsApp */}
             <a
               href="https://wa.me/27110000000"
               target="_blank"
@@ -79,7 +82,7 @@ const Footer = () => {
 
         <div className="mt-16 pt-8 border-t border-secondary-foreground/10 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-secondary-foreground/50 text-xs font-body">
-            © {new Date().getFullYear()} BrandForge. All rights reserved.
+            © {new Date().getFullYear()} Branding Hub. All rights reserved.
           </p>
           <div className="flex gap-6">
             {["Facebook", "Instagram", "LinkedIn"].map((s) => (

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const categories = ["All", "Apparel", "Signage", "Corporate Branding", "Vehicle Branding"];
 
@@ -15,17 +16,18 @@ const projects = [
 const FeaturedProjects = () => {
   const [active, setActive] = useState("All");
   const filtered = active === "All" ? projects : projects.filter((p) => p.category === active);
+  const { ref, isVisible } = useScrollAnimation();
 
   return (
     <section className="section-light section-padding">
-      <div className="container-tight">
-        <div className="text-center mb-12">
+      <div className="container-tight" ref={ref}>
+        <div className={`text-center mb-12 scroll-hidden ${isVisible ? "scroll-visible" : ""}`}>
           <p className="font-heading text-primary uppercase tracking-[0.3em] text-sm mb-3">Our Work</p>
           <h2 className="text-3xl md:text-5xl uppercase">Featured Projects</h2>
         </div>
 
         {/* Filters */}
-        <div className="flex flex-wrap justify-center gap-2 mb-12">
+        <div className={`flex flex-wrap justify-center gap-2 mb-12 scroll-hidden ${isVisible ? "scroll-visible" : ""}`} style={{ transitionDelay: "150ms" }}>
           {categories.map((cat) => (
             <button
               key={cat}
@@ -47,7 +49,8 @@ const FeaturedProjects = () => {
             <Link
               to="/portfolio"
               key={`${p.title}-${i}`}
-              className="group relative aspect-[4/3] overflow-hidden border border-border"
+              className={`group relative aspect-[4/3] overflow-hidden border border-border scroll-hidden-scale ${isVisible ? "scroll-visible-scale" : ""}`}
+              style={{ transitionDelay: isVisible ? `${(i + 1) * 100 + 200}ms` : "0ms" }}
             >
               <div className={`absolute inset-0 ${p.color} flex items-center justify-center`}>
                 <span className="font-heading text-xl uppercase tracking-wider text-secondary-foreground/20 select-none">
