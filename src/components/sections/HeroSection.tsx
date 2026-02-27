@@ -2,6 +2,9 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
+import pageAbout from "@/assets/page-about.jpg";
+import pageServices from "@/assets/page-services.jpg";
+import pagePortfolio from "@/assets/page-portfolio.jpg";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const HeroSection = () => {
@@ -13,24 +16,30 @@ const HeroSection = () => {
     { value: "24hr", label: "Fast Turnaround" },
   ];
 
+  const pageImages = [
+    { src: pageAbout, label: "About" },
+    { src: pageServices, label: "Services" },
+    { src: pagePortfolio, label: "Portfolio" },
+  ];
+
   return (
     <section className="relative min-h-[95vh] flex items-center overflow-hidden bg-[#F8F8F8]">
-      {/* Background image — visible through light overlay */}
+      {/* Background image — more visible */}
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: `url(${heroBg})` }}
       />
-      {/* Light gradient overlay — bright premium feel */}
+      {/* Lighter gradient overlay — more transparent, fading left to right */}
       <div
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(to right, rgba(248,248,248,0.96) 0%, rgba(248,248,248,0.88) 50%, rgba(248,248,248,0.72) 100%)",
+            "linear-gradient(to right, rgba(248,248,248,0.92) 0%, rgba(248,248,248,0.78) 40%, rgba(248,248,248,0.55) 70%, rgba(248,248,248,0.35) 100%)",
         }}
       />
 
       {/* Subtle warm tint */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#FAFAF8]/30 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-br from-[#FAFAF8]/20 to-transparent" />
 
       {/* Soft red glow accents */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[160px]" />
@@ -47,7 +56,7 @@ const HeroSection = () => {
       <div className="relative container-tight px-4 md:px-8 lg:px-16 py-20 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Left content */}
-          <div className="lg:col-span-7">
+          <div className="lg:col-span-6">
             <div className="inline-flex items-center gap-2 bg-primary/8 border border-primary/15 px-4 py-1.5 rounded-full mb-6 animate-fade-up">
               <Sparkles className="text-primary" size={14} />
               <span className="font-body text-primary text-xs uppercase tracking-widest font-medium">
@@ -78,23 +87,49 @@ const HeroSection = () => {
                 <Link to="/portfolio">View Our Work</Link>
               </Button>
             </div>
+
+            {/* Stats row below CTA */}
+            <div className="flex flex-wrap gap-6 mt-12" ref={statsRef}>
+              {stats.map((stat, i) => (
+                <div
+                  key={stat.label}
+                  className={`flex items-center gap-3 scroll-hidden ${statsVisible ? "scroll-visible" : ""}`}
+                  style={{ transitionDelay: `${i * 150}ms` }}
+                >
+                  <div className="w-0.5 h-10 bg-primary rounded-full shrink-0" />
+                  <div>
+                    <span className="font-heading text-2xl text-primary">{stat.value}</span>
+                    <p className="font-body text-muted-foreground text-xs uppercase tracking-wider">{stat.label}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
 
-          {/* Right — stats cards */}
-          <div className="lg:col-span-5 hidden lg:flex flex-col items-end gap-5" ref={statsRef}>
-            {stats.map((stat, i) => (
-              <div
-                key={stat.label}
-                className={`w-full max-w-[280px] bg-white/85 backdrop-blur-sm rounded-xl p-5 shadow-sm border border-border/50 flex items-center gap-4 scroll-hidden ${statsVisible ? "scroll-visible" : ""}`}
-                style={{ transitionDelay: `${i * 150}ms` }}
-              >
-                <div className="w-1 h-12 bg-primary rounded-full shrink-0" />
-                <div>
-                  <span className="font-heading text-3xl xl:text-4xl text-primary">{stat.value}</span>
-                  <p className="font-body text-muted-foreground text-sm uppercase tracking-wider mt-0.5">{stat.label}</p>
-                </div>
-              </div>
-            ))}
+          {/* Right — page image collage */}
+          <div className="lg:col-span-6 hidden lg:block relative h-[520px]">
+            {/* Overlay that fades from opaque left to transparent right */}
+            <div
+              className="absolute inset-0 z-10 pointer-events-none"
+              style={{
+                background:
+                  "linear-gradient(to right, rgba(248,248,248,0.85) 0%, rgba(248,248,248,0.4) 30%, rgba(248,248,248,0.1) 60%, transparent 100%)",
+              }}
+            />
+
+            {/* Stacked images */}
+            <div className="absolute top-0 right-0 w-[260px] h-[360px] rounded-xl overflow-hidden shadow-2xl animate-fade-up-delay-1">
+              <img src={pagePortfolio} alt="Portfolio showcase" className="w-full h-full object-cover" />
+            </div>
+            <div className="absolute top-8 right-[140px] w-[240px] h-[340px] rounded-xl overflow-hidden shadow-2xl animate-fade-up-delay-2">
+              <img src={pageServices} alt="Printing services" className="w-full h-full object-cover" />
+            </div>
+            <div className="absolute top-16 right-[270px] w-[220px] h-[320px] rounded-xl overflow-hidden shadow-2xl animate-fade-up-delay-3">
+              <img src={pageAbout} alt="Branding workspace" className="w-full h-full object-cover" />
+            </div>
+
+            {/* Subtle red accent behind images */}
+            <div className="absolute bottom-4 right-8 w-[300px] h-[300px] bg-primary/8 rounded-full blur-[80px] -z-0" />
           </div>
         </div>
       </div>
