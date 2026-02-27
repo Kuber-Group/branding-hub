@@ -37,6 +37,8 @@ const HeroSection = () => {
            "linear-gradient(  to right,  rgba(155, 155, 155, 0.5) 0%,  rgba(155, 155, 155, 0.35) 40%,  rgba(155, 155, 155, 0.15) 70%,  rgba(155, 155, 155, 0) 100%)"  }}
       />
 
+      {/* TODO:Sample Overlay To be Enhanced */}
+
       {/* Subtle warm tint */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#FAFAF8]/20 to-transparent" />
 
