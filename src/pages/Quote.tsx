@@ -60,7 +60,7 @@ const Quote = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-2">
                 <Label className="font-heading text-xs uppercase tracking-widest">Phone *</Label>
-                <Input required type="tel" placeholder="+27 00 000 0000" className="border-border focus:border-primary" />
+                <Input required type="tel" placeholder="+263 123 456 7890" className="border-border focus:border-primary" />
               </div>
               <div className="space-y-2">
                 <Label className="font-heading text-xs uppercase tracking-widest">Service Type *</Label>

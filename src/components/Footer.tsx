@@ -58,19 +58,19 @@ const Footer = () => {
             <ul className="space-y-3 font-body text-sm">
               <li className="flex items-center gap-2 text-secondary-foreground/70">
                 <Phone size={14} className="text-primary" />
-                +27 11 000 0000
+                +263 777 754 077
               </li>
               <li className="flex items-center gap-2 text-secondary-foreground/70">
                 <Mail size={14} className="text-primary" />
-                info@brandinghub.co.za
+                info@brandinghub.co.zw
               </li>
               <li className="flex items-start gap-2 text-secondary-foreground/70">
                 <MapPin size={14} className="text-primary mt-0.5" />
-                Johannesburg, South Africa
+                Office 101, 1st Floor, Masiye Business Suites, Bulawayo, Zimbabwe, 263 Bulawayo, Zimbabwe
               </li>
             </ul>
             <a
-              href="https://wa.me/27110000000"
+              href="https://wa.me/263777754077"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 mt-4 px-4 py-2 bg-primary/10 border border-primary/20 text-primary text-sm font-heading uppercase tracking-wider hover:bg-primary hover:text-primary-foreground transition-all duration-200"

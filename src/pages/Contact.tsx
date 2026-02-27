@@ -46,7 +46,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-heading text-sm uppercase tracking-wider mb-1">Phone</h3>
-                    <p className="text-muted-foreground font-body text-sm">+27 11 000 0000</p>
+                    <p className="text-muted-foreground font-body text-sm">+263 777 754 077</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
@@ -64,7 +64,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-heading text-sm uppercase tracking-wider mb-1">Location</h3>
-                    <p className="text-muted-foreground font-body text-sm">Johannesburg, South Africa</p>
+                    <p className="text-muted-foreground font-body text-sm">Office 101, 1st Floor, Masiye Business Suites, Bulawayo, Zimbabwe, 263 Bulawayo, Zimbabwe</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
@@ -74,7 +74,7 @@ const Contact = () => {
                   <div>
                     <h3 className="font-heading text-sm uppercase tracking-wider mb-1">WhatsApp</h3>
                     <a
-                      href="https://wa.me/27110000000"
+                      href="https://wa.me/263777754077"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-primary font-body text-sm hover:underline"
@@ -87,7 +87,7 @@ const Contact = () => {
 
               {/* Static Map Placeholder */}
               <div className="mt-10 aspect-video bg-secondary border border-border flex items-center justify-center">
-                <span className="font-heading text-sm uppercase tracking-wider text-secondary-foreground/15 select-none">Map — Johannesburg, SA</span>
+                <span className="font-heading text-sm uppercase tracking-wider text-secondary-foreground/15 select-none">Map — Bulawayo, ZW</span>
               </div>
             </div>
 
@@ -105,7 +105,7 @@ const Contact = () => {
                 </div>
                 <div className="space-y-2">
                   <Label className="font-heading text-xs uppercase tracking-widest">Phone</Label>
-                  <Input type="tel" placeholder="+27 00 000 0000" className="border-border focus:border-primary" />
+                  <Input type="tel" placeholder="+263 123 345 678" className="border-border focus:border-primary" />
                 </div>
                 <div className="space-y-2">
                   <Label className="font-heading text-xs uppercase tracking-widest">Message *</Label>

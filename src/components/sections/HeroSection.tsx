@@ -34,7 +34,7 @@ const HeroSection = () => {
         className="absolute inset-0"
         style={{
           background:
-           "linear-gradient(  to right,  rgba(155, 155, 155, 0.65) 0%,  rgba(155, 155, 155, 0.45) 40%,  rgba(155, 155, 155, 0.25) 70%,  rgba(155, 155, 155, 0) 100%)"  }}
+           "linear-gradient(  to right,  rgba(155, 155, 155, 0.5) 0%,  rgba(155, 155, 155, 0.35) 40%,  rgba(155, 155, 155, 0.15) 70%,  rgba(155, 155, 155, 0) 100%)"  }}
       />
 
       {/* Subtle warm tint */}
@@ -71,7 +71,7 @@ const HeroSection = () => {
               </span>
             </h1>
 
-            <p className="text-foreground/80 font-body text-lg md:text-xl max-w-xl mb-10 animate-fade-up-delay-2 leading-relaxed">
+            <p className="text-secondary-foreground/90 font-body text-lg md:text-xl max-w-xl mb-10 animate-fade-up-delay-2 leading-relaxed">
               We transform ideas into powerful visual identities — delivering professional branding, printing, and signage with speed, quality, and precision.
             </p>
 
