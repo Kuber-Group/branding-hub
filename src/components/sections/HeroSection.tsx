@@ -34,7 +34,7 @@ const HeroSection = () => {
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(to right, rgba(248,248,248,0.92) 0%, rgba(248,248,248,0.78) 40%, rgba(248,248,248,0.55) 70%, rgba(248,248,248,0.35) 100%)",
+            "linear-gradient(to right, rgba(224, 222, 222, 0.56) 0%, rgba(199, 199, 199, 0.32) 40%, rgba(219, 219, 219, 0.11) 70%, rgba(198, 198, 198, 0) 100%)",
         }}
       />
 
