@@ -34,8 +34,7 @@ const HeroSection = () => {
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(to right, rgba(224, 222, 222, 0.56) 0%, rgba(199, 199, 199, 0.32) 40%, rgba(219, 219, 219, 0.11) 70%, rgba(198, 198, 198, 0) 100%)",
-        }}
+           "linear-gradient(  to right,  rgba(155, 155, 155, 0.65) 0%,  rgba(155, 155, 155, 0.45) 40%,  rgba(155, 155, 155, 0.25) 70%,  rgba(155, 155, 155, 0) 100%)"  }}
       />
 
       {/* Subtle warm tint */}
@@ -56,7 +55,7 @@ const HeroSection = () => {
       <div className="relative container-tight px-4 md:px-8 lg:px-16 py-20 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Left content */}
-          <div className="lg:col-span-6">
+          <div className="lg:col-span-7">
             <div className="inline-flex items-center gap-2 bg-primary/8 border border-primary/15 px-4 py-1.5 rounded-full mb-6 animate-fade-up">
               <Sparkles className="text-primary" size={14} />
               <span className="font-body text-primary text-xs uppercase tracking-widest font-medium">
@@ -72,7 +71,7 @@ const HeroSection = () => {
               </span>
             </h1>
 
-            <p className="text-muted-foreground font-body text-lg md:text-xl max-w-xl mb-10 animate-fade-up-delay-2 leading-relaxed">
+            <p className="text-foreground/80 font-body text-lg md:text-xl max-w-xl mb-10 animate-fade-up-delay-2 leading-relaxed">
               We transform ideas into powerful visual identities — delivering professional branding, printing, and signage with speed, quality, and precision.
             </p>
 
@@ -107,7 +106,7 @@ const HeroSection = () => {
           </div>
 
           {/* Right — page image collage */}
-          <div className="lg:col-span-6 hidden lg:block relative h-[520px]">
+          <div className="lg:col-span-5 hidden lg:block relative h-[520px]">
             {/* Overlay that fades from opaque left to transparent right */}
             {/* <div
               className="absolute inset-0 z-10 pointer-events-none"
