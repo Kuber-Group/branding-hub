@@ -109,16 +109,16 @@ const HeroSection = () => {
           {/* Right — page image collage */}
           <div className="lg:col-span-6 hidden lg:block relative h-[520px]">
             {/* Overlay that fades from opaque left to transparent right */}
-            <div
+            {/* <div
               className="absolute inset-0 z-10 pointer-events-none"
               style={{
                 background:
                   "linear-gradient(to right, rgba(248,248,248,0.85) 0%, rgba(248,248,248,0.4) 30%, rgba(248,248,248,0.1) 60%, transparent 100%)",
               }}
-            />
+            /> */}
 
             {/* Stacked images */}
-            <div className="absolute top-0 right-0 w-[260px] h-[360px] rounded-xl overflow-hidden shadow-2xl animate-fade-up-delay-1">
+            {/* <div className="absolute top-0 right-0 w-[260px] h-[360px] rounded-xl overflow-hidden shadow-2xl animate-fade-up-delay-1">
               <img src={pagePortfolio} alt="Portfolio showcase" className="w-full h-full object-cover" />
             </div>
             <div className="absolute top-8 right-[140px] w-[240px] h-[340px] rounded-xl overflow-hidden shadow-2xl animate-fade-up-delay-2">
@@ -126,7 +126,7 @@ const HeroSection = () => {
             </div>
             <div className="absolute top-16 right-[270px] w-[220px] h-[320px] rounded-xl overflow-hidden shadow-2xl animate-fade-up-delay-3">
               <img src={pageAbout} alt="Branding workspace" className="w-full h-full object-cover" />
-            </div>
+            </div> */}
 
             {/* Subtle red accent behind images */}
             <div className="absolute bottom-4 right-8 w-[300px] h-[300px] bg-primary/8 rounded-full blur-[80px] -z-0" />
